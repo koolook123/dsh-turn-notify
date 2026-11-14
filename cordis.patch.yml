@@ -1,0 +1,25 @@
+# dsh-turn-notify bundle patch — inserts the corner-popup notification plugin.
+#
+# 每次 agent 的一轮（turn）结束后，在桌面右下角弹出一个自绘提示窗。
+# 监听的是 host 侧的 `session/event` 流里的 `turn/end` 事件。
+- insert:
+    - id: turn-notify
+      name: dsh-turn-notify
+      config:
+        enabled: true
+        # 弹窗停留秒数
+        seconds: 6
+        # 弹窗宽度（DIP，96dpi 逻辑像素）
+        width: 380
+        # 右下角边距
+        bottomMargin: 24
+        rightMargin: 24
+        # 只在这些条件满足时提示
+        notifyOnSuccess: true
+        notifyOnError: true
+        # 最短耗时阈值（秒）；小于这个值的 turn 不弹，避免刷屏。0 = 全弹
+        minDurationSec: 0
+        # 标题里显示会话名；false 则只显示固定标题
+        showSessionTitle: true
+        # 正文最多字符数
+        maxBodyChars: 160

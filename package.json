@@ -1,0 +1,45 @@
+{
+  "name": "dsh-turn-notify",
+  "version": "1.0.0",
+  "description": "Desktop corner popup notification when an agent turn finishes (DeepSeek Harness / dsh bundle plugin).",
+  "license": "MIT",
+  "author": "koolook123",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "toast.ps1",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "notification",
+    "windows",
+    "wpf",
+    "turn-end"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koolook123/dsh-turn-notify.git"
+  },
+  "homepage": "https://github.com/koolook123/dsh-turn-notify#readme",
+  "bugs": {
+    "url": "https://github.com/koolook123/dsh-turn-notify/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
